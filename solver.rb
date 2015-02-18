@@ -23,6 +23,23 @@ examples = [
 
 class Solver
   def self.solve(input)
-    0
+
+    # with original implementation with no strings around tests
+    #in solver spec, you need this to check for 0
+    # if input == 0
+    #   return 4
+    # end
+    # input = input.to_s
+    
+    input = input.split('')
+    count = 0
+    input.each do |x|
+      if x == '8'
+        count += 2
+      elsif x == '6' or x == '9' or x == '0'
+        count += 1
+      end
+    end
+    return count
   end
 end
